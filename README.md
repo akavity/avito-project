@@ -1,0 +1,1 @@
+# Automated Tests for the www.avito.ru
