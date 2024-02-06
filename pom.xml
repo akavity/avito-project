@@ -14,7 +14,11 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <aspectj.version>1.9.8</aspectj.version>
+
+        <log4j.version>2.22.0</log4j.version>
+        <projectlombok.version>1.18.28</projectlombok.version>
     </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -79,13 +83,13 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <version>${projectlombok.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.20.0</version>
+            <version>${log4j.version}</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
