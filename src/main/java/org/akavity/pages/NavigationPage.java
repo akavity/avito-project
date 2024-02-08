@@ -6,8 +6,9 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 public class NavigationPage {
-    public SelenideElement getNavigationItem(String itemName) {
-        return $(By.xpath("//div[contains(@class,'outer')]//a[contains(@data-marker,'" + itemName + "')]"));
+    public SelenideElement getNavigationItem(String item) {
+        return $(By.xpath("//div[contains(@class,'outer')]//a[contains(@data-marker,'" + item + "')]"));
+//        return $(By.cssSelector("div[class*='outer'] a[data-marker*='block-" + item + "']"));
     }
 
     public SelenideElement getRecommendationItem() {
