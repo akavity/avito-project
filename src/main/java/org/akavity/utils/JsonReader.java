@@ -22,7 +22,7 @@ public class JsonReader {
         ArrayList<Object> list = null;
         try {
             list = new Gson().fromJson(jsonData, TypeToken.getParameterized(List.class,
-                    Class.forName("org.example.models." + method.getAnnotation(TestData.class)
+                    Class.forName("org.akavity.models." + method.getAnnotation(TestData.class)
                             .model())).getType());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
