@@ -3,26 +3,68 @@ package org.akavity.steps;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.RealEstatePage;
+import org.akavity.utils.Utils;
 
 @Log4j2
 public class RealEstateSteps {
     RealEstatePage realEstatePage = new RealEstatePage();
+    Utils utils = new Utils();
 
     @Step
     public void selectTypeRealEstate(String type) {
+        log.info("Type real Estate is " + type);
         realEstatePage.getRealEstateTypeButton().click();
-        realEstatePage.dropDownItem(type).click();
+        realEstatePage.getDropDownItem(type).click();
     }
 
     @Step
     public void selectBuyOrRent(String intention) {
+        log.info("Your intention: " + intention);
         realEstatePage.getBuyRentButton().click();
-        realEstatePage.dropDownItem(intention).click();
+        realEstatePage.getDropDownItem(intention).click();
     }
 
     @Step
     public void selectBuildTime(String type) {
-        realEstatePage.getOldNewButton().click();
-        realEstatePage.dropDownItem(type).click();
+        log.info("House is " + type);
+        realEstatePage.getOldOrNewBuildingButton().click();
+        realEstatePage.getDropDownItem(type).click();
+    }
+
+    @Step
+    public void selectDropDownItem(String deskTopItem, String dropDownItem) {
+        realEstatePage.getDeskTopItem(deskTopItem).click();
+        realEstatePage.getDropDownItem(dropDownItem).click();
+    }
+
+    @Step
+    public void selectCheckboxListItem(String deskTopItem, String checkboxListItem) {
+        log.info("In  desktop " + deskTopItem + " set item: " + checkboxListItem);
+        realEstatePage.getDeskTopItem(deskTopItem).click();
+        realEstatePage.getCheckboxListItem(checkboxListItem).click();
+    }
+
+    @Step
+    public void clickDeskTopButton(String deskTopItem) {
+        realEstatePage.getDeskTopItem(deskTopItem).click();
+    }
+
+    @Step
+    public void selectValuesOfLimit(String deskTopItem, String minValue, String maxValue) {
+        log.info("/// Limit of " + deskTopItem);
+        realEstatePage.getDeskTopItem(deskTopItem).click();
+        utils.sleep(1000);
+        log.info("Enter min value of limit: " + minValue);
+        realEstatePage.getMinPriceInput().setValue(minValue);
+        log.info("Enter max value of limit: " + maxValue);
+        realEstatePage.getMaxPriceInput().setValue(maxValue);
+        utils.sleep(1500);
+    }
+
+    @Step
+    public void clickShowResultButton() {
+        log.info("Click show resul button");
+        realEstatePage.getShowResultButton().click();
+        utils.sleep(1500);
     }
 }
