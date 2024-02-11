@@ -35,6 +35,7 @@ public class RealEstateSteps {
     public void selectDropDownItem(String deskTopItem, String dropDownItem) {
         realEstatePage.getDeskTopItem(deskTopItem).click();
         realEstatePage.getDropDownItem(dropDownItem).click();
+        utils.sleep(1000);
     }
 
     @Step
