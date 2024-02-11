@@ -7,12 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApartmentData {
+public class SummerHouseData {
     String section;
-    String typeRealEstate;
-    String intention;
-    String deskTopRooms;
-    String numberOfRooms;
+    String deskTopApartment;
+    String dropDownDacha;
+    String limitOfArea;
+    String minArea;
+    String maxArea;
     String limitOfPrice;
     String minPrice;
     String maxPrice;
