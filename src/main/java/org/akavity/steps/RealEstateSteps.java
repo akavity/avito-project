@@ -1,9 +1,12 @@
 package org.akavity.steps;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.RealEstatePage;
 import org.akavity.utils.Utils;
+
+import static com.codeborne.selenide.Selenide.actions;
 
 @Log4j2
 public class RealEstateSteps {
@@ -60,6 +63,23 @@ public class RealEstateSteps {
         log.info("Enter max value of limit: " + maxValue);
         realEstatePage.getMaxPriceInput().setValue(maxValue);
         utils.sleep(1500);
+    }
+
+    @Step
+    public void selectValuesOfDoubleSlider(String deskTopItem, int leftHandleOffset, int rightHandleOffset) {
+        SelenideElement leftHandle = realEstatePage.getLeftHandle();
+        SelenideElement rightHandle = realEstatePage.getRightHandle();
+//        SelenideElement sliderMin = $(By.xpath("//div[contains(@class,'slider-cont')]/div[contains(@class,'slider-t')][1]/div"));
+//        SelenideElement sliderMax = $(By.xpath("//div[contains(@class,'slider-cont')]/div[contains(@class,'slider-t')][2]/div"));
+        log.info("/// Slider of " + deskTopItem);
+        realEstatePage.getDeskTopItem(deskTopItem).click();
+        utils.sleep(1000);
+        actions().dragAndDropBy(leftHandle, leftHandleOffset, 0).build().perform();
+        log.info("Drag left handle to " + leftHandleOffset);
+        utils.sleep(1000);
+        actions().dragAndDropBy(rightHandle, rightHandleOffset, 0).build().perform();
+        log.info("Drag right handle to " + rightHandleOffset);
+        utils.sleep(1000);
     }
 
     @Step

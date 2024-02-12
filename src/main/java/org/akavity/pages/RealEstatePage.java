@@ -12,12 +12,17 @@ public class RealEstatePage {
     private final SelenideElement showResultButton = $(By.cssSelector("a[data-marker*='button-0'] span[class*='desktop']"));
     private final SelenideElement minPriceInput = $(By.cssSelector("input[data-marker*='from']"));
     private final SelenideElement maxPriceInput = $(By.cssSelector("input[data-marker*='to']"));
+    private final SelenideElement leftHandle = $(By.xpath("//div[contains(@class,'slider-cont')]" +
+            "/div[contains(@class,'slider-t')][1]/div"));
+    private final SelenideElement rightHandle = $(By.xpath("//div[contains(@class,'slider-cont')]" +
+            "/div[contains(@class,'slider-t')][2]/div"));
 
     public SelenideElement getDeskTopItem(String item) {
         return $(By.xpath("//div[contains(@class,'desktop')]//span[contains(text(),'" + item + "')]/../.. " +
-                "| //div[contains(@class,'desktop')]//input[contains(@value,'" + item + "')]/../.. "));
+                "| //div[contains(@class,'desktop')]//input[contains(@value,'" + item + "')]/../.."));
     }
 
+    //div[contains(@class,'desktop')]//span[contains(text(),'Вид объекта')]/../.. | //div[contains(@class,'desktop')]//input[contains(@value,'Вид объекта')]/../..
     public SelenideElement paramButton(String param) {
         return $(By.xpath("//span[contains(@class,'tooltip')]//span[contains(text(),'" + param + "') " +
                 "and contains(@class,'styles')]"));
@@ -53,5 +58,13 @@ public class RealEstatePage {
 
     public SelenideElement getShowResultButton() {
         return showResultButton;
+    }
+
+    public SelenideElement getLeftHandle() {
+        return leftHandle;
+    }
+
+    public SelenideElement getRightHandle() {
+        return rightHandle;
     }
 }
