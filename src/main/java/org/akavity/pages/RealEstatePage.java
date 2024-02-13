@@ -22,7 +22,6 @@ public class RealEstatePage {
                 "| //div[contains(@class,'desktop')]//input[contains(@value,'" + item + "')]/../.."));
     }
 
-    //div[contains(@class,'desktop')]//span[contains(text(),'Вид объекта')]/../.. | //div[contains(@class,'desktop')]//input[contains(@value,'Вид объекта')]/../..
     public SelenideElement paramButton(String param) {
         return $(By.xpath("//span[contains(@class,'tooltip')]//span[contains(text(),'" + param + "') " +
                 "and contains(@class,'styles')]"));
