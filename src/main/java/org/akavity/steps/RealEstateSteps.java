@@ -66,11 +66,9 @@ public class RealEstateSteps {
     }
 
     @Step
-    public void selectValuesOfDoubleSlider(String deskTopItem, int leftHandleOffset, int rightHandleOffset) {
+    public void dragHandlesOfDoubleSlider(String deskTopItem, int leftHandleOffset, int rightHandleOffset) {
         SelenideElement leftHandle = realEstatePage.getLeftHandle();
         SelenideElement rightHandle = realEstatePage.getRightHandle();
-//        SelenideElement sliderMin = $(By.xpath("//div[contains(@class,'slider-cont')]/div[contains(@class,'slider-t')][1]/div"));
-//        SelenideElement sliderMax = $(By.xpath("//div[contains(@class,'slider-cont')]/div[contains(@class,'slider-t')][2]/div"));
         log.info("/// Slider of " + deskTopItem);
         realEstatePage.getDeskTopItem(deskTopItem).click();
         utils.sleep(1000);
