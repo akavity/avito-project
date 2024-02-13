@@ -1,0 +1,16 @@
+[
+  {
+    "section":"Авто",
+    "carBrand": "Audi",
+    "carModel": "100",
+    "fullCarName": "Audi 100",
+    "numberOfArrayElements": 10
+  },
+  {
+    "section":"Авто",
+    "carBrand": "Audi",
+    "carModel": "A4",
+    "fullCarName": "Audi A4",
+    "numberOfArrayElements": 10
+  }
+]
