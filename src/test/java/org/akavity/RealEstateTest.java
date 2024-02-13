@@ -2,6 +2,7 @@ package org.akavity;
 
 import org.akavity.annotations.TestData;
 import org.akavity.models.ApartmentData;
+import org.akavity.models.LandData;
 import org.akavity.models.RoomData;
 import org.akavity.models.SummerHouseData;
 import org.akavity.steps.MainSteps;
@@ -68,13 +69,21 @@ public class RealEstateTest extends BaseTest {
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
     }
 
-    @Test(description = "Check the sorting when searching for a summer house")
-    public void selectArea() {
-        mainSteps.moveToSection("Недвиж");
-        realEstateSteps.selectDropDownItem("Квартира", "Земельный");
-        realEstateSteps.selectCheckboxListItem("Категория земель", "Поселений");
-        realEstateSteps.selectValuesOfSlider("Площадь","40","500");
-        realEstateSteps.selectValuesOfLimit("Цена", "400000", "1000000");
+    @TestData(jsonFile = "landData", model = "LandData")
+    @Test(description = "Check the sorting when searching for a land",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectArea(LandData land) {
+        mainSteps.moveToSection(land.getSection());
+        realEstateSteps.selectDropDownItem(land.getDeskTopApartment(), land.getDropDownApartment());
+        realEstateSteps.selectCheckboxListItem(land.getDeskTopLandType(), land.getCheckboxLandType());
+        realEstateSteps.dragHandlesOfDoubleSlider(land.getDeskTopSlider(), land.getLeftHandleOffset(), land.getRightHandleOffset());
+        realEstateSteps.selectValuesOfLimit(land.getLimitOfPrice(), land.getMinPrice(), land.getMaxPrice());
         realEstateSteps.clickShowResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(land.getMinPrice());
+        int maxPrice = Integer.parseInt(land.getMaxPrice());
+
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
     }
 }
