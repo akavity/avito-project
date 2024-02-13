@@ -10,7 +10,7 @@ public class RubricatorSteps {
 
     @Step
     public void clickRubricatorItem(String item) {
-        log.info("Click on the car brand: " + item);
+        log.info("Click on the rubricator item: " + item);
         rubricatorPage.getRubricatorItem(item).click();
     }
 
