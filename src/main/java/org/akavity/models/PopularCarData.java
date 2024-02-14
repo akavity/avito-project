@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarData {
+public class PopularCarData {
     String section;
     String carBrand;
     String carModel;

@@ -1,0 +1,16 @@
+[
+  {
+    "section":"Авто",
+    "carBrand": "Smart",
+    "carModel": "Fortwo",
+    "fullCarName": "Smart Fortwo",
+    "numberOfArrayElements": 10
+  },
+  {
+    "section":"Авто",
+    "carBrand": "Zeekr",
+    "carModel": "X",
+    "fullCarName": "Zeekr X",
+    "numberOfArrayElements": 10
+  }
+]
