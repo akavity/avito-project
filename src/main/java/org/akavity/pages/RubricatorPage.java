@@ -6,9 +6,8 @@ import org.openqa.selenium.By;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RubricatorPage {
-    private final SelenideElement popularItemsButton = $(By.xpath("//button[contains(@class,'popular')]"));
-    private final SelenideElement allItemsButton =
-            $(By.xpath("//button[contains(@class,'popular')]/following-sibling::span"));
+    private final SelenideElement popularItemsButton = $(By.cssSelector("div[data-marker*='controls'] span[class*='popular']"));
+    private final SelenideElement allItemsButton = $(By.cssSelector("button[class*='popular']"));
 
     public SelenideElement getRubricatorItem(String carModel) {
         return $(By.cssSelector("div[data-marker='popular-rubricator/links'] a[title='" + carModel + "']"));

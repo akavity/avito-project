@@ -21,6 +21,18 @@ public class RubricatorSteps {
     }
 
     @Step
+    public void clickAllItemsButton(String decision) {
+        switch (decision) {
+            case "yes" -> {
+                log.info("Click all items button");
+                rubricatorPage.getAllItemsButton().click();
+            }
+            case "no" -> log.info("Watch popular items");
+            default -> log.info("Not correct decision. Please select yes, no");
+        }
+    }
+
+    @Step
     public void clickPopularItemsButton() {
         log.info("Click popular items button");
         rubricatorPage.getPopularItemsButton().click();
