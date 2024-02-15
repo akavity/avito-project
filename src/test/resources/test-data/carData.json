@@ -1,0 +1,34 @@
+[
+  {
+    "section":"Авто",
+    "decision": "yes",
+    "carBrand": "Smart",
+    "carModel": "Fortwo",
+    "fullCarName": "Smart Fortwo",
+    "numberOfArrayElements": 10
+  },
+  {
+    "section":"Авто",
+    "decision": "yes",
+    "carBrand": "Zeekr",
+    "carModel": "X",
+    "fullCarName": "Zeekr X",
+    "numberOfArrayElements": 10
+  },
+  {
+    "section":"Авто",
+    "decision": "no",
+    "carBrand": "Audi",
+    "carModel": "100",
+    "fullCarName": "Audi 100",
+    "numberOfArrayElements": 10
+  },
+  {
+    "section":"Авто",
+    "decision": "no",
+    "carBrand": "Audi",
+    "carModel": "A4",
+    "fullCarName": "Audi A4",
+    "numberOfArrayElements": 10
+  }
+]

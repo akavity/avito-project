@@ -1,0 +1,12 @@
+[
+  {
+    "section": "Недвиж",
+    "typeRealEstate": "Квартира",
+    "buyOrRent": "Купить",
+    "deskTopRooms": "Комнаты",
+    "numberOfRooms": "2",
+    "limitOfPrice": "Цена",
+    "minPrice": "2000000",
+    "maxPrice": "5000000"
+  }
+]

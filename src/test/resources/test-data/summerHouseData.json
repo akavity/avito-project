@@ -1,0 +1,13 @@
+[
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownDacha": "дача",
+    "limitOfArea": "Площадь",
+    "minArea": "40",
+    "maxArea": "55",
+    "limitOfPrice": "Цена",
+    "minPrice": "200000",
+    "maxPrice": "350000"
+  }
+]

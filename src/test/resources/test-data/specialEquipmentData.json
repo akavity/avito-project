@@ -1,0 +1,14 @@
+[
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "no",
+    "typeOfEquipment": "Копатель корнеплодов",
+    "secondDecision": "no",
+    "equipmentBrand": "УРАЛЕЦ",
+    "equipmentModel": "КК-540",
+    "fullEquipmentName": "УРАЛЕЦ КК-540",
+    "numberOfArrayElements": 5
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownRoom": "Комната",
+    "checkboxRooms": "Комнат в квартире",
+    "numberOfRooms": "2 комнаты",
+    "limitOfArea": "Площадь",
+    "minArea": "20",
+    "maxArea": "40",
+    "limitOfPrice": "Цена",
+    "minPrice": "700000",
+    "maxPrice": "1200000"
+  }
+]

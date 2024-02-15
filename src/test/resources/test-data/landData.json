@@ -1,0 +1,15 @@
+[
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownApartment": "Земельный",
+    "deskTopLandType": "Категория земель",
+    "checkboxLandType": "Поселений",
+    "deskTopSlider": "Площадь",
+    "leftHandleOffset": 30,
+    "rightHandleOffset": -20,
+    "limitOfPrice": "Цена",
+    "minPrice": "200000",
+    "maxPrice": "350000"
+  }
+]

@@ -1,0 +1,89 @@
+package org.akavity;
+
+import org.akavity.annotations.TestData;
+import org.akavity.models.ApartmentData;
+import org.akavity.models.LandData;
+import org.akavity.models.RoomData;
+import org.akavity.models.SummerHouseData;
+import org.akavity.steps.RealEstateSteps;
+import org.akavity.steps.RubricatorSteps;
+import org.akavity.steps.SortResultSteps;
+import org.akavity.utils.JsonReader;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class RealEstateTest extends BaseTest {
+    RubricatorSteps rubricatorSteps = new RubricatorSteps();
+    RealEstateSteps realEstateSteps = new RealEstateSteps();
+    SortResultSteps sortResultSteps = new SortResultSteps();
+
+    @TestData(jsonFile = "apartmentData", model = "ApartmentData")
+    @Test(description = "Check the sorting when searching for an apartment",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectApartment(ApartmentData apartment) {
+        rubricatorSteps.moveToSection(apartment.getSection());
+        realEstateSteps.selectTypeRealEstate(apartment.getTypeRealEstate());
+        realEstateSteps.selectBuyOrRent(apartment.getIntention());
+        realEstateSteps.selectCheckboxListItem(apartment.getDeskTopRooms(), apartment.getNumberOfRooms());
+        realEstateSteps.selectValuesOfLimit(apartment.getLimitOfPrice(), apartment.getMinPrice(), apartment.getMaxPrice());
+        realEstateSteps.clickShowResultButton();
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(apartment.getMinPrice());
+        int maxPrice = Integer.parseInt(apartment.getMaxPrice());
+
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+    }
+
+    @TestData(jsonFile = "summerHouseData", model = "SummerHouseData")
+    @Test(description = "Check the sorting when searching for a summer house",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectSummerHouse(SummerHouseData dacha) {
+        rubricatorSteps.moveToSection(dacha.getSection());
+        realEstateSteps.selectDropDownItem(dacha.getDeskTopApartment(), dacha.getDropDownDacha());
+        realEstateSteps.selectValuesOfLimit(dacha.getLimitOfArea(), dacha.getMinArea(), dacha.getMaxArea());
+        realEstateSteps.selectValuesOfLimit(dacha.getLimitOfPrice(), dacha.getMinPrice(), dacha.getMaxPrice());
+        realEstateSteps.clickShowResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(dacha.getMinPrice());
+        int maxPrice = Integer.parseInt(dacha.getMaxPrice());
+
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+    }
+
+    @TestData(jsonFile = "roomData", model = "RoomData")
+    @Test(description = "Check the sorting when searching for a room",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectRoom(RoomData room) {
+        rubricatorSteps.moveToSection(room.getSection());
+        realEstateSteps.selectDropDownItem(room.getDeskTopApartment(), room.getDropDownRoom());
+        realEstateSteps.selectCheckboxListItem(room.getCheckboxRooms(), room.getNumberOfRooms());
+        realEstateSteps.selectValuesOfLimit(room.getLimitOfArea(), room.getMinArea(), room.getMaxArea());
+        realEstateSteps.selectValuesOfLimit(room.getLimitOfPrice(), room.getMinPrice(), room.getMaxPrice());
+        realEstateSteps.clickShowResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(room.getMinPrice());
+        int maxPrice = Integer.parseInt(room.getMaxPrice());
+
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+    }
+
+    @TestData(jsonFile = "landData", model = "LandData")
+    @Test(description = "Check the sorting when searching for a land",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectArea(LandData land) {
+        rubricatorSteps.moveToSection(land.getSection());
+        realEstateSteps.selectDropDownItem(land.getDeskTopApartment(), land.getDropDownApartment());
+        realEstateSteps.selectCheckboxListItem(land.getDeskTopLandType(), land.getCheckboxLandType());
+        realEstateSteps.dragHandlesOfDoubleSlider(land.getDeskTopSlider(), land.getLeftHandleOffset(), land.getRightHandleOffset());
+        realEstateSteps.selectValuesOfLimit(land.getLimitOfPrice(), land.getMinPrice(), land.getMaxPrice());
+        realEstateSteps.clickShowResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(land.getMinPrice());
+        int maxPrice = Integer.parseInt(land.getMaxPrice());
+
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+    }
+}
