@@ -5,15 +5,15 @@ import org.akavity.models.ApartmentData;
 import org.akavity.models.LandData;
 import org.akavity.models.RoomData;
 import org.akavity.models.SummerHouseData;
-import org.akavity.steps.MainSteps;
 import org.akavity.steps.RealEstateSteps;
+import org.akavity.steps.RubricatorSteps;
 import org.akavity.steps.SortResultSteps;
 import org.akavity.utils.JsonReader;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RealEstateTest extends BaseTest {
-    MainSteps mainSteps = new MainSteps();
+    RubricatorSteps rubricatorSteps = new RubricatorSteps();
     RealEstateSteps realEstateSteps = new RealEstateSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
 
@@ -21,7 +21,7 @@ public class RealEstateTest extends BaseTest {
     @Test(description = "Check the sorting when searching for an apartment",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectApartment(ApartmentData apartment) {
-        mainSteps.moveToSection(apartment.getSection());
+        rubricatorSteps.moveToSection(apartment.getSection());
         realEstateSteps.selectTypeRealEstate(apartment.getTypeRealEstate());
         realEstateSteps.selectBuyOrRent(apartment.getIntention());
         realEstateSteps.selectCheckboxListItem(apartment.getDeskTopRooms(), apartment.getNumberOfRooms());
@@ -38,7 +38,7 @@ public class RealEstateTest extends BaseTest {
     @Test(description = "Check the sorting when searching for a summer house",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectSummerHouse(SummerHouseData dacha) {
-        mainSteps.moveToSection(dacha.getSection());
+        rubricatorSteps.moveToSection(dacha.getSection());
         realEstateSteps.selectDropDownItem(dacha.getDeskTopApartment(), dacha.getDropDownDacha());
         realEstateSteps.selectValuesOfLimit(dacha.getLimitOfArea(), dacha.getMinArea(), dacha.getMaxArea());
         realEstateSteps.selectValuesOfLimit(dacha.getLimitOfPrice(), dacha.getMinPrice(), dacha.getMaxPrice());
@@ -55,7 +55,7 @@ public class RealEstateTest extends BaseTest {
     @Test(description = "Check the sorting when searching for a room",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectRoom(RoomData room) {
-        mainSteps.moveToSection(room.getSection());
+        rubricatorSteps.moveToSection(room.getSection());
         realEstateSteps.selectDropDownItem(room.getDeskTopApartment(), room.getDropDownRoom());
         realEstateSteps.selectCheckboxListItem(room.getCheckboxRooms(), room.getNumberOfRooms());
         realEstateSteps.selectValuesOfLimit(room.getLimitOfArea(), room.getMinArea(), room.getMaxArea());
@@ -73,7 +73,7 @@ public class RealEstateTest extends BaseTest {
     @Test(description = "Check the sorting when searching for a land",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectArea(LandData land) {
-        mainSteps.moveToSection(land.getSection());
+        rubricatorSteps.moveToSection(land.getSection());
         realEstateSteps.selectDropDownItem(land.getDeskTopApartment(), land.getDropDownApartment());
         realEstateSteps.selectCheckboxListItem(land.getDeskTopLandType(), land.getCheckboxLandType());
         realEstateSteps.dragHandlesOfDoubleSlider(land.getDeskTopSlider(), land.getLeftHandleOffset(), land.getRightHandleOffset());
