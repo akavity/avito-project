@@ -1,4 +1,4 @@
-package org.akavity.models;
+package org.akavity.models.realEstateTest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SummerHouseData {
+public class RoomData {
     String section;
     String deskTopApartment;
-    String dropDownDacha;
+    String dropDownRoom;
+    String checkboxRooms;
+    String numberOfRooms;
     String limitOfArea;
     String minArea;
     String maxArea;

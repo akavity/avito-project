@@ -1,4 +1,4 @@
-package org.akavity.models;
+package org.akavity.models.realEstateTest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
