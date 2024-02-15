@@ -22,7 +22,10 @@ public class AutoTest extends BaseTest {
         rubricatorSteps.clickRubricatorItem(carData.getCarBrand());
         rubricatorSteps.clickRubricatorItem(carData.getCarModel());
 
-        Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(carData.getFullCarName(), carData.getNumberOfArrayElements()));
+        String fullCarName = carData.getFullCarName();
+        int numberOfSortResult = carData.getNumberOfArrayElements();
+
+        Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(fullCarName, numberOfSortResult));
     }
 
     @TestData(jsonFile = "specialEquipmentData", model = "SpecialEquipmentData")
@@ -38,6 +41,7 @@ public class AutoTest extends BaseTest {
         rubricatorSteps.clickRubricatorItem(equipment.getEquipmentBrand());
         rubricatorSteps.clickRubricatorItem(equipment.getEquipmentModel());
 
-        Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(equipment.getFullEquipmentName(), 5));
+        Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(equipment.getFullEquipmentName(),
+                equipment.getNumberOfArrayElements()));
     }
 }
