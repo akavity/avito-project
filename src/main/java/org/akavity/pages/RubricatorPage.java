@@ -13,6 +13,11 @@ public class RubricatorPage {
         return $(By.cssSelector("div[data-marker='popular-rubricator/links'] a[title='" + carModel + "']"));
     }
 
+    // visualRubricaror
+    public SelenideElement getVisualRubricarorItem(String item) {
+        return $(By.cssSelector("div[class*='outer'] a[data-marker*='block-" + item + "']"));
+    }
+
     public SelenideElement getPopularItemsButton() {
         return popularItemsButton;
     }

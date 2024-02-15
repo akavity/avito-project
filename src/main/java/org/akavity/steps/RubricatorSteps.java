@@ -1,8 +1,11 @@
 package org.akavity.steps;
 
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.RubricatorPage;
+
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 @Log4j2
 public class RubricatorSteps {
@@ -36,5 +39,13 @@ public class RubricatorSteps {
     public void clickPopularItemsButton() {
         log.info("Click popular items button");
         rubricatorPage.getPopularItemsButton().click();
+    }
+
+    //    Visual Rubricaror
+    @Step
+    public void moveToSection(String title) {
+        SelenideElement element = rubricatorPage.getVisualRubricarorItem(title);
+        log.info("Move to section: " + title);
+        executeJavaScript("arguments[0].click();", element);
     }
 }
