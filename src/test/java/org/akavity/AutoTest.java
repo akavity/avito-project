@@ -1,8 +1,8 @@
 package org.akavity;
 
 import org.akavity.annotations.TestData;
-import org.akavity.models.CarData;
-import org.akavity.models.SpecialEquipmentData;
+import org.akavity.models.autoTest.SpecialEquipmentData;
+import org.akavity.models.autoTest.CarData;
 import org.akavity.steps.RubricatorSteps;
 import org.akavity.steps.SortResultSteps;
 import org.akavity.utils.JsonReader;
@@ -13,7 +13,7 @@ public class AutoTest extends BaseTest {
     RubricatorSteps rubricatorSteps = new RubricatorSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
 
-    @TestData(jsonFile = "carData", model = "CarData")
+    @TestData(jsonFile = "carData", model = "CarData", folder = "autoTest")
     @Test(description = "Check the sorting when searching for a car",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectCarModel(CarData carData) {
@@ -28,7 +28,7 @@ public class AutoTest extends BaseTest {
         Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(fullCarName, numberOfSortResult));
     }
 
-    @TestData(jsonFile = "specialEquipmentData", model = "SpecialEquipmentData")
+    @TestData(jsonFile = "specialEquipmentData", model = "SpecialEquipmentData", folder = "autoTest")
     @Test(description = "Check the sorting when searching for a special equipment",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectTrucksAndSpecialEquipment(SpecialEquipmentData equipment) {

@@ -1,10 +1,10 @@
 package org.akavity;
 
 import org.akavity.annotations.TestData;
-import org.akavity.models.ApartmentData;
-import org.akavity.models.LandData;
-import org.akavity.models.RoomData;
-import org.akavity.models.SummerHouseData;
+import org.akavity.models.realEstateTest.ApartmentData;
+import org.akavity.models.realEstateTest.LandData;
+import org.akavity.models.realEstateTest.RoomData;
+import org.akavity.models.realEstateTest.SummerHouseData;
 import org.akavity.steps.RealEstateSteps;
 import org.akavity.steps.RubricatorSteps;
 import org.akavity.steps.SortResultSteps;
@@ -17,7 +17,7 @@ public class RealEstateTest extends BaseTest {
     RealEstateSteps realEstateSteps = new RealEstateSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
 
-    @TestData(jsonFile = "apartmentData", model = "ApartmentData")
+    @TestData(jsonFile = "apartmentData", model = "ApartmentData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for an apartment",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectApartment(ApartmentData apartment) {
@@ -34,7 +34,7 @@ public class RealEstateTest extends BaseTest {
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
     }
 
-    @TestData(jsonFile = "summerHouseData", model = "SummerHouseData")
+    @TestData(jsonFile = "summerHouseData", model = "SummerHouseData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a summer house",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectSummerHouse(SummerHouseData dacha) {
@@ -51,7 +51,7 @@ public class RealEstateTest extends BaseTest {
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
     }
 
-    @TestData(jsonFile = "roomData", model = "RoomData")
+    @TestData(jsonFile = "roomData", model = "RoomData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a room",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectRoom(RoomData room) {
@@ -69,7 +69,7 @@ public class RealEstateTest extends BaseTest {
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
     }
 
-    @TestData(jsonFile = "landData", model = "LandData")
+    @TestData(jsonFile = "landData", model = "LandData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a land",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectArea(LandData land) {

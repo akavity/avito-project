@@ -1,4 +1,4 @@
-package org.akavity.models;
+package org.akavity.models.autoTest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

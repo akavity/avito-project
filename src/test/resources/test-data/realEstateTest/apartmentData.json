@@ -2,7 +2,7 @@
   {
     "section": "Недвиж",
     "typeRealEstate": "Квартира",
-    "buyOrRent": "Купить",
+    "intention": "Купить",
     "deskTopRooms": "Комнаты",
     "numberOfRooms": "2",
     "limitOfPrice": "Цена",
