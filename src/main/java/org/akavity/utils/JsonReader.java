@@ -17,13 +17,14 @@ public class JsonReader {
     @DataProvider
     public Object[][] getData(Method method) throws FileNotFoundException {
         String jsonData = JsonParser.parseReader(new FileReader("src/test/resources/test-data/"
+                + method.getAnnotation(TestData.class).folder() + "/"
                 + method.getAnnotation(TestData.class).jsonFile() + ".json")).toString();
 
         ArrayList<Object> list = null;
         try {
             list = new Gson().fromJson(jsonData, TypeToken.getParameterized(List.class,
-                    Class.forName("org.akavity.models." + method.getAnnotation(TestData.class)
-                            .model())).getType());
+                    Class.forName("org.akavity.models." + method.getAnnotation(TestData.class).folder()
+                            + "." + method.getAnnotation(TestData.class).model())).getType());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

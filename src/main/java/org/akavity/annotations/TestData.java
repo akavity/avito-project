@@ -11,4 +11,6 @@ public @interface TestData {
     String jsonFile();
 
     String model();
+
+    String folder();
 }
