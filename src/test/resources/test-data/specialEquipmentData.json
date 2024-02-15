@@ -1,0 +1,14 @@
+[
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "no",
+    "typeOfEquipment": "Копатель корнеплодов",
+    "secondDecision": "no",
+    "equipmentBrand": "Smart",
+    "equipmentModel": "Fortwo",
+    "fullEquipmentName": "Smart Fortwo",
+    "numberOfArrayElements": 5
+  }
+]
