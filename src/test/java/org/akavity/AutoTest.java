@@ -1,8 +1,9 @@
 package org.akavity;
 
 import org.akavity.annotations.TestData;
-import org.akavity.models.autoTest.SpecialEquipmentData;
 import org.akavity.models.autoTest.CarData;
+import org.akavity.models.autoTest.SpecialEquipmentData;
+import org.akavity.models.autoTest.TruckData;
 import org.akavity.steps.RubricatorSteps;
 import org.akavity.steps.SortResultSteps;
 import org.akavity.utils.JsonReader;
@@ -31,7 +32,7 @@ public class AutoTest extends BaseTest {
     @TestData(jsonFile = "specialEquipmentData", model = "SpecialEquipmentData", folder = "autoTest")
     @Test(description = "Check the sorting when searching for a special equipment",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectTrucksAndSpecialEquipment(SpecialEquipmentData equipment) {
+    public void selectSpecialEquipment(SpecialEquipmentData equipment) {
         rubricatorSteps.moveToSection(equipment.getFirstSection());
         rubricatorSteps.moveToSection(equipment.getSecondSection());
         rubricatorSteps.moveToSection(equipment.getThirdSection());
@@ -43,5 +44,21 @@ public class AutoTest extends BaseTest {
 
         Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(equipment.getFullEquipmentName(),
                 equipment.getNumberOfArrayElements()));
+    }
+
+    @TestData(jsonFile = "truckData", model = "TruckData", folder = "autoTest")
+    @Test(description = "Check the sorting when searching for a truck",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectTrucks(TruckData truck) {
+        rubricatorSteps.moveToSection(truck.getFirstSection());
+        rubricatorSteps.moveToSection(truck.getSecondSection());
+        rubricatorSteps.moveToSection(truck.getThirdSection());
+        rubricatorSteps.clickAllItemsButton(truck.getDecision());
+        rubricatorSteps.clickRubricatorItem(truck.getTruckBrand());
+        rubricatorSteps.clickRubricatorItem(truck.getTruckModel());
+        rubricatorSteps.clickRubricatorItem(truck.getWheelFormula());
+
+        Assert.assertTrue(sortResultSteps.eachArrayElementContainsText(truck.getFullEquipmentName(),
+                truck.getNumberOfArrayElements()));
     }
 }

@@ -1,0 +1,13 @@
+[
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Тягачи",
+    "decision": "no",
+    "truckBrand": "DAF",
+    "truckModel": "XF",
+    "wheelFormula": "4×2",
+    "fullEquipmentName": "DAF XF",
+    "numberOfArrayElements": 5
+  }
+]
