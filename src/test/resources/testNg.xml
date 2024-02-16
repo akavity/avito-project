@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainTest" parallel="tests" thread-count="2">
+
+    <test name="Auto">
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+        <classes>
+            <class name="org.akavity.AutoTest">
+                <methods>
+                    <include name="selectCarModel"/>
+                    <include name="selectSpecialEquipment"/>
+                    <include name="selectTrucks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RealEstate">
+        <parameter name="startType" value="selenoid"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="latest"/>
+        <classes>
+            <class name="org.akavity.RealEstateTest">
+                <methods>
+                    <include name="selectApartment"/>
+                    <include name="selectSummerHouse"/>
+                    <include name="selectRoom"/>
+                    <include name="selectLand"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

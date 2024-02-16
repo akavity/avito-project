@@ -27,6 +27,7 @@ public class RealEstateTest extends BaseTest {
         realEstateSteps.selectCheckboxListItem(apartment.getDeskTopRooms(), apartment.getNumberOfRooms());
         realEstateSteps.selectValuesOfLimit(apartment.getLimitOfPrice(), apartment.getMinPrice(), apartment.getMaxPrice());
         realEstateSteps.clickShowResultButton();
+
         int actual = sortResultSteps.getPriceFirstFoundObject();
         int minPrice = Integer.parseInt(apartment.getMinPrice());
         int maxPrice = Integer.parseInt(apartment.getMaxPrice());
@@ -72,7 +73,7 @@ public class RealEstateTest extends BaseTest {
     @TestData(jsonFile = "landData", model = "LandData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a land",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectArea(LandData land) {
+    public void selectLand(LandData land) {
         rubricatorSteps.moveToSection(land.getSection());
         realEstateSteps.selectDropDownItem(land.getDeskTopApartment(), land.getDropDownApartment());
         realEstateSteps.selectCheckboxListItem(land.getDeskTopLandType(), land.getCheckboxLandType());
