@@ -16,64 +16,71 @@ public class SearchFilterSteps {
     Utils utils = new Utils();
 
     @Step
-    public void clickFilterButtonOrCheckout(String title, String text) {
+    public void clickButtonOrCheckbox(String title, String text) {
         log.info("Under the title: " + title + "\n click on the item contains text: " + text);
-        searchFilterPage.getFilterButtonAndCheckout(title, text).click();
+        searchFilterPage.getButtonOrCheckout(title, text).click();
     }
 
     @Step
-    public void clickCheckboxItem(String title, String itemName) {
-        log.info("Click on the field under the title: " + title);
-        SelenideElement checkbox = searchFilterPage.getFilterField(title);
-        SelenideElement checkout = searchFilterPage.getCheckboxItem(itemName);
-        checkbox.scrollIntoView(PARAMETER);
-        checkbox.click();
-        actions().click(checkbox).sendKeys(checkout).sendKeys(Keys.ESCAPE).build().perform();
-    }
-
-    @Step
-    public void setValuesOfLimit(String title, String min, String max) {
-        log.info("Set values of limit: " + title);
-        SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
-        SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
-        log.info("Set min limit: " + minValue);
-        minValue.scrollIntoView(PARAMETER).setValue(min);
-        utils.sleep(1000);
-        log.info("Set max limit: " + maxValue);
-        maxValue.setValue(max);
-    }
-
-    @Step
-    public void setMinValueOfLimit(String title, String min) {
-        log.info("Set values of limit: " + title);
-        SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
-        log.info("Set min limit: " + minValue);
-        minValue.scrollIntoView(PARAMETER).setValue(min);
-    }
-
-    @Step
-    public void setMaxValueOfLimit(String title, String max) {
-        log.info("Set values of limit: " + title);
-        SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
-        log.info("Set max limit: " + maxValue);
-        maxValue.scrollIntoView(PARAMETER).setValue(max);
+    public void clickDropdownCheckbox(String title, String singText) {
+        SelenideElement dropdown = searchFilterPage.getFilterField(title);
+        SelenideElement checkbox = searchFilterPage.getCheckboxItem(singText);
+        log.info("Click on the dropdown: " + title);
+        dropdown.scrollIntoView(PARAMETER);
+        dropdown.click();
+        log.info("Select the checkbox: " + singText);
+        actions().click(dropdown).sendKeys(checkbox).sendKeys(Keys.ESCAPE).build().perform();
     }
 
     @Step
     public void setValuesOfDropDownLimit(String title, String min, String max) {
         SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
         SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
+        log.info("Set values of dropdown limit: " + title);
         minValue.scrollIntoView(PARAMETER);
-//        minValue.sendKeys(min);
-//        minValue.sendKeys(Keys.RETURN);
-//        utils.sleep(1000);
-//        maxValue.sendKeys(max);
-//        maxValue.sendKeys(Keys.ESCAPE);
+        log.info("Set min limit: " + minValue);
         actions().click(minValue).sendKeys(min).sendKeys(Keys.ESCAPE).build().perform();
-////        minValue.setValue(min);
-//        utils.sleep(700);
-//        maxValue.setValue(max);
+        log.info("Set max limit: " + maxValue);
         actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
         actions().sendKeys(Keys.DOWN);
+    }
+
+    @Step
+    public void setValuesOfLimit(String title, String min, String max) {
+        SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
+        SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
+        log.info("Set values of limit: " + title);
+        minValue.scrollIntoView(PARAMETER);
+        log.info("Set min limit: " + minValue);
+        actions().click(minValue).sendKeys(min).build().perform();
+        log.info("Set max limit: " + maxValue);
+        actions().click(maxValue).sendKeys(max).build().perform();
+    }
+
+    @Step
+    public void setMinValueOfLimit(String title, String min) {
+        SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
+        log.info("Set min value of limit: " + title);
+        minValue.scrollIntoView(PARAMETER);
+        log.info("Min limit: " + minValue);
+        actions().click(minValue).sendKeys(min).build().perform();
+    }
+
+    @Step
+    public void setMaxValueOfLimit(String title, String max) {
+        SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
+        log.info("Set max value of limit: " + title);
+        maxValue.scrollIntoView(PARAMETER);
+        log.info("Max limit: " + maxValue);
+        actions().click(maxValue).sendKeys(max).build().perform();
+    }
+
+    @Step
+    public void clickResultButton() {
+        SelenideElement button = searchFilterPage.getResultButton();
+        button.scrollIntoView(PARAMETER);
+        utils.sleep(2000);
+        log.info("Click result button");
+        button.click();
     }
 }
