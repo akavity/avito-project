@@ -9,9 +9,10 @@
         <classes>
             <class name="org.akavity.AutoTest">
                 <methods>
-                    <include name="selectCarModel"/>
-                    <include name="selectSpecialEquipment"/>
-                    <include name="selectTrucks"/>
+                    <include name="selectCarModelUsingRubricator"/>
+                    <include name="selectSpecialEquipmentUsingRubricator"/>
+                    <include name="selectTrucksUsingRubricator"/>
+                    <include name="selectCarUsingFilters"/>
                 </methods>
             </class>
         </classes>
