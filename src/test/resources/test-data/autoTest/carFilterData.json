@@ -1,0 +1,24 @@
+[
+  {
+    "sectionFirst": "Авто",
+    "sectionSecond": "Авто",
+    "typeCarTitle": "Тип автомобиля",
+    "typeCar": "С пробегом",
+    "inStockTitle": "Наличие",
+    "inStock": "В наличии",
+    "carBrandTitle": "Марка",
+    "carBrand": "Audi",
+    "carModelTitle": "Модель",
+    "carModel": "100",
+    "fullCarName": "Audi 100",
+    "priceTitle": "Цена",
+    "minPrice": "200000",
+    "maxPrice": "340000",
+    "carMileageTitle": "Пробег",
+    "minCarMileage": "5 000",
+    "maxCarMileage": "300 000",
+    "driveUnitTitle": "Привод",
+    "driveUnit": "полный",
+    "numberOfArrayElements": 5
+  }
+]
