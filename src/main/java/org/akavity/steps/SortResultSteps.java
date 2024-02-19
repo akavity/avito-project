@@ -1,8 +1,10 @@
 package org.akavity.steps;
 
+import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.SortResultPage;
+import org.akavity.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.List;
 @Log4j2
 public class SortResultSteps {
     SortResultPage sortResultPage = new SortResultPage();
+    Utils utils = new Utils();
 
     @Step
     public void clickFirstFoundObjects() {
@@ -28,7 +31,7 @@ public class SortResultSteps {
 
     @Step
     public String getNameOfFirstFoundObject() {
-        String name = sortResultPage.getFoundObjectsNames().first().getText();
+        String name = sortResultPage.getFoundObjectsTitles().first().getText();
         log.info("The name of the found object: " + name);
         return name;
     }
@@ -36,8 +39,8 @@ public class SortResultSteps {
     @Step
     public boolean eachArrayElementContainsText(String text, int elements) {
         boolean result = true;
-        List<String> names = new ArrayList<>(sortResultPage.getFoundObjectsNames().first(elements).texts());
-        for(String name : names) {
+        List<String> names = new ArrayList<>(sortResultPage.getFoundObjectsTitles().first(elements).texts());
+        for (String name : names) {
             log.info("Array names contains name: " + name);
             if (!name.contains(text)) {
                 log.info("/// Object name dose not contain text: " + text);
@@ -46,5 +49,15 @@ public class SortResultSteps {
             }
         }
         return result;
+    }
+
+    @Step
+    public boolean doTitlesContainSpecificName(String name, int elements) {
+       return utils.doElementsContainText(sortResultPage.getFoundObjectsTitles(), name, elements);
+    }
+
+    @Step
+    public boolean doDescriptionsContainText(String text, int elements) {
+        return utils.doElementsContainText(sortResultPage.getShortDescriptionField(), text, elements);
     }
 }

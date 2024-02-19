@@ -55,6 +55,7 @@ public class SearchFilterSteps {
         actions().click(minValue).sendKeys(min).build().perform();
         log.info("Set max limit: " + maxValue);
         actions().click(maxValue).sendKeys(max).build().perform();
+        utils.sleep(1500);
     }
 
     @Step
@@ -64,6 +65,7 @@ public class SearchFilterSteps {
         minValue.scrollIntoView(PARAMETER);
         log.info("Min limit: " + minValue);
         actions().click(minValue).sendKeys(min).build().perform();
+        utils.sleep(1500);
     }
 
     @Step
@@ -73,6 +75,7 @@ public class SearchFilterSteps {
         maxValue.scrollIntoView(PARAMETER);
         log.info("Max limit: " + maxValue);
         actions().click(maxValue).sendKeys(max).build().perform();
+        utils.sleep(1500);
     }
 
     @Step
