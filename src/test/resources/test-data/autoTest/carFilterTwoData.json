@@ -1,0 +1,28 @@
+[
+  {
+    "sectionFirst": "Авто",
+    "sectionSecond": "Авто",
+    "priceTitle": "Цена",
+    "minPrice": "2500000",
+    "maxPrice": "4200000",
+    "yearOfIssueTitle": "Год выпуска",
+    "minYearOfIssue": "2015",
+    "maxYearOfIssue": "2020",
+    "carMileageTitle": "Пробег",
+    "maxCarMileage": "120 000",
+    "driveUnitTitle": "Привод",
+    "driveUnit": "полный",
+    "engineTypeTitle": "Тип двигателя",
+    "engineType": "бензин",
+    "carConditionTitle": "Состояние",
+    "carCondition": "битых",
+    "bodyStyleTitle": "Тип кузова",
+    "bodyStyle": "седан",
+    "parameters": [
+      "седан",
+      "полный",
+      "бензин"
+    ],
+    "numberOfArrayElements": 5
+  }
+]
