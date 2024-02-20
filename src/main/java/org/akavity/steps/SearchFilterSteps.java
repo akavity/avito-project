@@ -17,8 +17,10 @@ public class SearchFilterSteps {
 
     @Step
     public void clickButtonOrCheckbox(String title, String text) {
+        SelenideElement buttonCheckbox = searchFilterPage.getButtonOrCheckout(title, text);
+        buttonCheckbox.scrollIntoView(PARAMETER);
         log.info("Under the title: " + title + "\n click on the item contains text: " + text);
-        searchFilterPage.getButtonOrCheckout(title, text).click();
+        buttonCheckbox.click();
     }
 
     @Step
@@ -40,6 +42,16 @@ public class SearchFilterSteps {
         minValue.scrollIntoView(PARAMETER);
         log.info("Set min limit: " + minValue);
         actions().click(minValue).sendKeys(min).sendKeys(Keys.ESCAPE).build().perform();
+        log.info("Set max limit: " + maxValue);
+        actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
+        actions().sendKeys(Keys.DOWN);
+    }
+
+    @Step
+    public void setValuesOfDropDownLimit(String title, String max) {
+        SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
+        log.info("Set max value of dropdown limit: " + title);
+        maxValue.scrollIntoView(PARAMETER);
         log.info("Set max limit: " + maxValue);
         actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
         actions().sendKeys(Keys.DOWN);
