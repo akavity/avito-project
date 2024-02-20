@@ -41,4 +41,27 @@ public class Utils {
         }
         return result;
     }
+
+    public boolean doShortDescriptionsContainText(ElementsCollection collection, List<String> parameters, int elements) {
+        boolean result = true;
+        if (collection.isEmpty()) {
+            log.info("Collection is empty");
+            result = false;
+        } else {
+            List<String> descriptions = new ArrayList<>(collection.first(elements).texts());
+            for (String description : descriptions) {
+                log.info("Array descriptions contains description: " + description);
+                for (String parameter : parameters) {
+                    if (!description.contains(parameter)) {
+                        log.info("/// Description dose not contain parameter: " + parameter);
+                        result = false;
+                        break;
+                    } else {
+                        log.info("Description contains " + parameter);
+                    }
+                }
+            }
+        }
+        return result;
+    }
 }
