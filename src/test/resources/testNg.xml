@@ -12,7 +12,8 @@
                     <include name="selectCarModelUsingRubricator"/>
                     <include name="selectSpecialEquipmentUsingRubricator"/>
                     <include name="selectTrucksUsingRubricator"/>
-                    <include name="selectCarUsingFilters"/>
+                    <include name="selectCarUsingFiltersTest1"/>
+                    <include name="selectCarUsingFiltersTest2"/>
                 </methods>
             </class>
         </classes>
