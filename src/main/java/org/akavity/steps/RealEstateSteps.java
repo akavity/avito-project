@@ -38,7 +38,7 @@ public class RealEstateSteps {
     public void selectDropDownItem(String deskTopItem, String dropDownItem) {
         realEstatePage.getDeskTopItem(deskTopItem).click();
         realEstatePage.getDropDownItem(dropDownItem).click();
-        utils.sleep(1000);
+        utils.sleep();
     }
 
     @Step
@@ -57,7 +57,7 @@ public class RealEstateSteps {
     public void selectValuesOfLimit(String deskTopItem, String minValue, String maxValue) {
         log.info("/// Limit of " + deskTopItem);
         realEstatePage.getDeskTopItem(deskTopItem).click();
-        utils.sleep(1000);
+        utils.sleep();
         log.info("Enter min value of limit: " + minValue);
         realEstatePage.getMinPriceInput().setValue(minValue);
         log.info("Enter max value of limit: " + maxValue);
@@ -71,13 +71,13 @@ public class RealEstateSteps {
         SelenideElement rightHandle = realEstatePage.getRightHandle();
         log.info("/// Slider of " + deskTopItem);
         realEstatePage.getDeskTopItem(deskTopItem).click();
-        utils.sleep(1000);
+        utils.sleep();
         actions().dragAndDropBy(leftHandle, leftHandleOffset, 0).build().perform();
         log.info("Drag left handle to " + leftHandleOffset);
-        utils.sleep(1000);
+        utils.sleep();
         actions().dragAndDropBy(rightHandle, rightHandleOffset, 0).build().perform();
         log.info("Drag right handle to " + rightHandleOffset);
-        utils.sleep(1000);
+        utils.sleep();
     }
 
     @Step

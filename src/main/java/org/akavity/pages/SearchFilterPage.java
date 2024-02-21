@@ -35,13 +35,6 @@ public class SearchFilterPage {
                 "/../../following-sibling::div//input[contains(@data-marker,'to')]"));
     }
 
-    public SelenideElement getValueOfMinDropDownLimit(String title) {
-        return $(By.xpath("//div[starts-with(@class,'fieldset')]//span[contains(text(),'" + title + "')]" +
-                "/../../following-sibling::div//input[contains(@data-marker,'from')]"));
-
-
-    }
-
     public SelenideElement getResultButton() {
         return resultButton;
     }

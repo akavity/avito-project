@@ -11,7 +11,7 @@
                 <methods>
                     <include name="selectCarModelUsingRubricator"/>
                     <include name="selectSpecialEquipmentUsingRubricator"/>
-                    <include name="selectTrucksUsingRubricator"/>
+                    <include name="selectTruckUsingRubricator"/>
                     <include name="selectCarUsingFiltersTest1"/>
                     <include name="selectCarUsingFiltersTest2"/>
                 </methods>
@@ -26,10 +26,10 @@
         <classes>
             <class name="org.akavity.RealEstateTest">
                 <methods>
-                    <include name="selectApartment"/>
-                    <include name="selectSummerHouse"/>
-                    <include name="selectRoom"/>
-                    <include name="selectLand"/>
+                    <include name="selectApartmentUsingDesktop"/>
+                    <include name="selectSummerHouseUsingDesktop"/>
+                    <include name="selectRoomUsingDesktop"/>
+                    <include name="selectLandUsingDesktop"/>
                 </methods>
             </class>
         </classes>

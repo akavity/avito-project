@@ -52,7 +52,7 @@ public class AutoTest extends BaseTest {
     @TestData(jsonFile = "truckData", model = "TruckData", folder = "autoTest")
     @Test(description = "Check the sorting when searching for a truck",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectTrucksUsingRubricator(TruckData truck) {
+    public void selectTruckUsingRubricator(TruckData truck) {
         rubricatorSteps.moveToSection(truck.getFirstSection());
         rubricatorSteps.moveToSection(truck.getSecondSection());
         rubricatorSteps.moveToSection(truck.getThirdSection());

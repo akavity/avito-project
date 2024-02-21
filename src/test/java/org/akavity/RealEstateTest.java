@@ -20,7 +20,7 @@ public class RealEstateTest extends BaseTest {
     @TestData(jsonFile = "apartmentData", model = "ApartmentData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for an apartment",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectApartment(ApartmentData apartment) {
+    public void selectApartmentUsingDesktop(ApartmentData apartment) {
         rubricatorSteps.moveToSection(apartment.getSection());
         realEstateSteps.selectTypeRealEstate(apartment.getTypeRealEstate());
         realEstateSteps.selectBuyOrRent(apartment.getIntention());
@@ -38,7 +38,7 @@ public class RealEstateTest extends BaseTest {
     @TestData(jsonFile = "summerHouseData", model = "SummerHouseData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a summer house",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectSummerHouse(SummerHouseData dacha) {
+    public void selectSummerHouseUsingDesktop(SummerHouseData dacha) {
         rubricatorSteps.moveToSection(dacha.getSection());
         realEstateSteps.selectDropDownItem(dacha.getDeskTopApartment(), dacha.getDropDownDacha());
         realEstateSteps.selectValuesOfLimit(dacha.getLimitOfArea(), dacha.getMinArea(), dacha.getMaxArea());
@@ -55,7 +55,7 @@ public class RealEstateTest extends BaseTest {
     @TestData(jsonFile = "roomData", model = "RoomData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a room",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectRoom(RoomData room) {
+    public void selectRoomUsingDesktop(RoomData room) {
         rubricatorSteps.moveToSection(room.getSection());
         realEstateSteps.selectDropDownItem(room.getDeskTopApartment(), room.getDropDownRoom());
         realEstateSteps.selectCheckboxListItem(room.getCheckboxRooms(), room.getNumberOfRooms());
@@ -73,7 +73,7 @@ public class RealEstateTest extends BaseTest {
     @TestData(jsonFile = "landData", model = "LandData", folder = "realEstateTest")
     @Test(description = "Check the sorting when searching for a land",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
-    public void selectLand(LandData land) {
+    public void selectLandUsingDesktop(LandData land) {
         rubricatorSteps.moveToSection(land.getSection());
         realEstateSteps.selectDropDownItem(land.getDeskTopApartment(), land.getDropDownApartment());
         realEstateSteps.selectCheckboxListItem(land.getDeskTopLandType(), land.getCheckboxLandType());
