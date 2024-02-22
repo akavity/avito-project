@@ -11,5 +11,31 @@
     "limitOfPrice": "Цена",
     "minPrice": "200000",
     "maxPrice": "350000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownApartment": "Земельный",
+    "deskTopLandType": "Категория земель",
+    "checkboxLandType": "Сельхозназначения",
+    "deskTopSlider": "Площадь",
+    "leftHandleOffset": 40,
+    "rightHandleOffset": -30,
+    "limitOfPrice": "Цена",
+    "minPrice": "30000",
+    "maxPrice": "85000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownApartment": "Земельный",
+    "deskTopLandType": "Категория земель",
+    "checkboxLandType": "Промназначения",
+    "deskTopSlider": "Площадь",
+    "leftHandleOffset": 30,
+    "rightHandleOffset": -30,
+    "limitOfPrice": "Цена",
+    "minPrice": "3000000",
+    "maxPrice": "8500000"
   }
 ]
