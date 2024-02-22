@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoTest extends MainTest {
+public class AutoTest extends BaseTest {
     RubricatorSteps rubricatorSteps = new RubricatorSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
     SearchFilterSteps searchFilterSteps = new SearchFilterSteps();

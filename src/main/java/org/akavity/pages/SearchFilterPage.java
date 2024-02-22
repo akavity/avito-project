@@ -13,16 +13,13 @@ public class SearchFilterPage {
                 "/../../following-sibling::div//span[contains (text(),'" + text + "')]/../.."));
     }
 
-    //div[starts-with(@class,'fieldset')]//span[contains(@class,'text-bold') and contains(text(),'')] title  28
-    //div[starts-with(@class,'fieldset')]//span[contains(text(),'" + title + "')]   use it )
-
     public SelenideElement getFilterField(String title) {
         return $(By.xpath("//div[starts-with(@class,'fieldset')]//span[contains(text(),'" + title + "')]" +
                 "/../../following-sibling::div"));
     }
 
     public SelenideElement getCheckboxItem(String name) {
-        return $(By.xpath("//div[@role='button']/p[contains(text(),'" + name + "')]/../.."));
+        return $(By.xpath("//div[@role='button']/p[text()='" + name + "']/../.."));
     }
 
     public SelenideElement getValueOfMinLimit(String title) {
