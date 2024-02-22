@@ -30,6 +30,7 @@ public class SortResultSteps {
         String price = sortResultPage.getPricesOfFoundObjects().first().getText();
         log.info("Found price of first object: " + price);
         return Integer.parseInt(price
+                .replace("от", "")
                 .replace(" ", "")
                 .replace("₽", ""));
     }

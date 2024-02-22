@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoTest extends BaseTest {
+public class AutoTest extends MainTest {
     RubricatorSteps rubricatorSteps = new RubricatorSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
     SearchFilterSteps searchFilterSteps = new SearchFilterSteps();
@@ -67,14 +67,13 @@ public class AutoTest extends BaseTest {
     }
 
     @TestData(jsonFile = "carFilterData", model = "CarFilterData", folder = "autoTest")
-    @Test(description = "Select car using filters: type car, in stock, car brand, car model, min and max price, " +
+    @Test(description = "Select car using filters: type car, car brand, car model, min and max price, " +
             "min and max car mileage, drive unit",
             dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectCarUsingFiltersTest1(CarFilterData car) {
         rubricatorSteps.moveToSection(car.getSectionFirst());
         rubricatorSteps.moveToSection(car.getSectionSecond());
         searchFilterSteps.clickButtonOrCheckbox(car.getTypeCarTitle(), car.getTypeCar());
-        searchFilterSteps.clickButtonOrCheckbox(car.getInStockTitle(), car.getInStock());
         searchFilterSteps.clickDropdownCheckbox(car.getCarBrandTitle(), car.getCarBrand());
         searchFilterSteps.clickDropdownCheckbox(car.getCarModelTitle(), car.getCarModel());
         searchFilterSteps.setValuesOfLimit(car.getPriceTitle(), car.getMinPrice(), car.getMaxPrice());

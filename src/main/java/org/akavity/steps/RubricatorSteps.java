@@ -42,6 +42,7 @@ public class RubricatorSteps {
     }
 
     //    Visual Rubricaror
+
     @Step
     public void moveToSection(String title) {
         SelenideElement element = rubricatorPage.getVisualRubricarorItem(title);

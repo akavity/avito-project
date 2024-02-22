@@ -30,6 +30,7 @@ public class SearchFilterSteps {
         log.info("Click on the dropdown: " + title);
         dropdown.scrollIntoView(PARAMETER);
         dropdown.click();
+        utils.sleep();
         log.info("Select the checkbox: " + singText);
         actions().click(dropdown).sendKeys(checkbox).sendKeys(Keys.ESCAPE).build().perform();
     }
@@ -38,13 +39,17 @@ public class SearchFilterSteps {
     public void setValuesOfDropDownLimit(String title, String min, String max) {
         SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
         SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
-        log.info("Set values of dropdown limit: " + title);
-        minValue.scrollIntoView(PARAMETER);
-        log.info("Set min limit: " + minValue);
-        actions().click(minValue).sendKeys(min).sendKeys(Keys.ESCAPE).build().perform();
-        log.info("Set max limit: " + maxValue);
-        actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
-        actions().sendKeys(Keys.DOWN);
+        if (minValue.isDisplayed()) {
+            log.info("Set values of dropdown limit: " + title);
+            minValue.scrollIntoView(PARAMETER);
+            log.info("Set min limit: " + min);
+            actions().click(minValue).sendKeys(min).sendKeys(Keys.ESCAPE).build().perform();
+            log.info("Set max limit: " + max);
+            actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
+            actions().sendKeys(Keys.DOWN);
+        } else {
+            log.info("New car has no mileage");
+        }
     }
 
     @Step
@@ -52,7 +57,7 @@ public class SearchFilterSteps {
         SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
         log.info("Set max value of dropdown limit: " + title);
         maxValue.scrollIntoView(PARAMETER);
-        log.info("Set max limit: " + maxValue);
+        log.info("Set max limit: " + max);
         actions().click(maxValue).sendKeys(max).sendKeys(Keys.ESCAPE).build().perform();
         actions().sendKeys(Keys.DOWN);
     }
@@ -63,9 +68,9 @@ public class SearchFilterSteps {
         SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
         log.info("Set values of limit: " + title);
         minValue.scrollIntoView(PARAMETER);
-        log.info("Set min limit: " + minValue);
+        log.info("Set min limit: " + min);
         actions().click(minValue).sendKeys(min).build().perform();
-        log.info("Set max limit: " + maxValue);
+        log.info("Set max limit: " + max);
         actions().click(maxValue).sendKeys(max).build().perform();
         utils.sleep(1500);
     }
@@ -75,7 +80,7 @@ public class SearchFilterSteps {
         SelenideElement minValue = searchFilterPage.getValueOfMinLimit(title);
         log.info("Set min value of limit: " + title);
         minValue.scrollIntoView(PARAMETER);
-        log.info("Min limit: " + minValue);
+        log.info("Min limit: " + min);
         actions().click(minValue).sendKeys(min).build().perform();
         utils.sleep(1500);
     }
@@ -85,7 +90,7 @@ public class SearchFilterSteps {
         SelenideElement maxValue = searchFilterPage.getValueOfMaxLimit(title);
         log.info("Set max value of limit: " + title);
         maxValue.scrollIntoView(PARAMETER);
-        log.info("Max limit: " + maxValue);
+        log.info("Max limit: " + max);
         actions().click(maxValue).sendKeys(max).build().perform();
         utils.sleep(1500);
     }

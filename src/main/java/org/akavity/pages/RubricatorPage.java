@@ -14,6 +14,7 @@ public class RubricatorPage {
     }
 
     // visualRubricaror
+
     public SelenideElement getVisualRubricarorItem(String item) {
         return $(By.cssSelector("div[class*='outer'] a[data-marker*='block-" + item + "']"));
     }

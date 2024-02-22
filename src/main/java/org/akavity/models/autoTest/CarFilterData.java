@@ -12,8 +12,6 @@ public class CarFilterData {
     String sectionSecond;
     String typeCarTitle;
     String typeCar;
-    String inStockTitle;
-    String inStock;
     String carBrandTitle;
     String carBrand;
     String carModelTitle;
