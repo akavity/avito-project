@@ -5,6 +5,9 @@ import lombok.extern.log4j.Log4j2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @Log4j2
 public class Utils {
     public void sleep() {
@@ -21,6 +24,16 @@ public class Utils {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public int extractIntFromText(String text, String regex) {
+        int result = 0;
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) {
+            result = Integer.parseInt(matcher.group().replace(" ", ""));
+        }
+        return result;
     }
 
     public boolean doElementsContainText(ElementsCollection collection, String text, int elements) {
