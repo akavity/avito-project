@@ -8,5 +8,35 @@
     "limitOfPrice": "Цена",
     "minPrice": "2000000",
     "maxPrice": "5000000"
+  },
+  {
+    "section": "Недвиж",
+    "typeRealEstate": "Квартира",
+    "intention": "Купить",
+    "deskTopRooms": "Комнаты",
+    "numberOfRooms": "Студия",
+    "limitOfPrice": "Цена",
+    "minPrice": "2500000",
+    "maxPrice": "4000000"
+  },
+  {
+    "section": "Недвиж",
+    "typeRealEstate": "Квартира",
+    "intention": "Купить",
+    "deskTopRooms": "Комнаты",
+    "numberOfRooms": "5",
+    "limitOfPrice": "Цена",
+    "minPrice": "6500000",
+    "maxPrice": "9000000"
+  },
+  {
+    "section": "Недвиж",
+    "typeRealEstate": "Квартира",
+    "intention": "Снять",
+    "deskTopRooms": "Комнаты",
+    "numberOfRooms": "3",
+    "limitOfPrice": "Цена",
+    "minPrice": "15000",
+    "maxPrice": "30000"
   }
 ]

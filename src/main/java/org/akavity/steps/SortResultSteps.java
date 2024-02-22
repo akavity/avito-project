@@ -29,10 +29,7 @@ public class SortResultSteps {
     public int getPriceFirstFoundObject() {
         String price = sortResultPage.getPricesOfFoundObjects().first().getText();
         log.info("Found price of first object: " + price);
-        return Integer.parseInt(price
-                .replace("от", "")
-                .replace(" ", "")
-                .replace("₽", ""));
+        return utils.extractIntFromText(price, "\\d+[ ]?\\d+[ ]?\\d+");
     }
 
     @Step
