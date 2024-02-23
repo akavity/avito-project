@@ -3,11 +3,52 @@
     "section": "Недвиж",
     "deskTopApartment": "Квартира",
     "dropDownDacha": "дача",
+    "typeTitle": "Вид объекта",
+    "type": "Дача",
     "limitOfArea": "Площадь",
     "minArea": "40",
     "maxArea": "55",
     "limitOfPrice": "Цена",
     "minPrice": "200000",
     "maxPrice": "350000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownDacha": "дача",
+    "typeTitle": "Вид объекта",
+    "type": "Дом",
+    "limitOfArea": "Площадь",
+    "minArea": "75",
+    "maxArea": "120",
+    "limitOfPrice": "Цена",
+    "minPrice": "4000000",
+    "maxPrice": "7500000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownDacha": "дача",
+    "typeTitle": "Вид объекта",
+    "type": "Коттедж",
+    "limitOfArea": "Площадь",
+    "minArea": "100",
+    "maxArea": "150",
+    "limitOfPrice": "Цена",
+    "minPrice": "6000000",
+    "maxPrice": "11000000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownDacha": "дача",
+    "typeTitle": "Вид объекта",
+    "type": "Таунхаус",
+    "limitOfArea": "Площадь",
+    "minArea": "130",
+    "maxArea": "190",
+    "limitOfPrice": "Цена",
+    "minPrice": "11000000",
+    "maxPrice": "18000000"
   }
 ]

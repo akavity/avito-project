@@ -11,6 +11,8 @@ public class SummerHouseData {
     String section;
     String deskTopApartment;
     String dropDownDacha;
+    String typeTitle;
+    String type;
     String limitOfArea;
     String minArea;
     String maxArea;
