@@ -7,7 +7,8 @@
     "numberOfRooms": "2",
     "limitOfPrice": "Цена",
     "minPrice": "2000000",
-    "maxPrice": "5000000"
+    "maxPrice": "5000000",
+    "partOftTitle": "2-к."
   },
   {
     "section": "Недвиж",
@@ -17,7 +18,8 @@
     "numberOfRooms": "Студия",
     "limitOfPrice": "Цена",
     "minPrice": "2500000",
-    "maxPrice": "4000000"
+    "maxPrice": "4000000",
+    "partOftTitle": "студия"
   },
   {
     "section": "Недвиж",
@@ -27,7 +29,8 @@
     "numberOfRooms": "5",
     "limitOfPrice": "Цена",
     "minPrice": "6500000",
-    "maxPrice": "9000000"
+    "maxPrice": "9000000",
+    "partOftTitle": "квартир"
   },
   {
     "section": "Недвиж",
@@ -37,6 +40,7 @@
     "numberOfRooms": "3",
     "limitOfPrice": "Цена",
     "minPrice": "15000",
-    "maxPrice": "30000"
+    "maxPrice": "30000",
+    "partOftTitle": "3-к."
   }
 ]

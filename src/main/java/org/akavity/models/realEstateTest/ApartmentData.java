@@ -16,4 +16,5 @@ public class ApartmentData {
     String limitOfPrice;
     String minPrice;
     String maxPrice;
+    String partOftTitle;
 }
