@@ -53,9 +53,9 @@ public class RealEstateTest extends BaseTest {
         int maxPrice = Integer.parseInt(dacha.getMaxPrice());
         Assert.assertTrue(actualPrice <= maxPrice && actualPrice >= minPrice);
 
-        int actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
-        int minArea = Integer.parseInt(dacha.getMinArea());
-        int maxArea = Integer.parseInt(dacha.getMaxArea());
+        double actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
+        double minArea = Double.parseDouble(dacha.getMinArea());
+        double maxArea = Double.parseDouble(dacha.getMaxArea());
         Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
     }
 
@@ -73,8 +73,12 @@ public class RealEstateTest extends BaseTest {
         int actual = sortResultSteps.getPriceFirstFoundObject();
         int minPrice = Integer.parseInt(room.getMinPrice());
         int maxPrice = Integer.parseInt(room.getMaxPrice());
-
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+
+        double actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
+        double minArea = Double.parseDouble(room.getMinArea());
+        double maxArea = Double.parseDouble(room.getMaxArea());
+        Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
     }
 
     @TestData(jsonFile = "landData", model = "LandData", folder = "realEstateTest")

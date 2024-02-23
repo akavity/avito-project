@@ -26,6 +26,18 @@ public class Utils {
         }
     }
 
+    public double extractDoubleFromText(String text, String regex) {
+        double result = 0.0;
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        while (matcher.find()) {
+            result = Double.parseDouble(matcher.group()
+                    .replace(",", ".")
+                    .replace("м²", ""));
+        }
+        return result;
+    }
+
     public int extractIntFromText(String text, String regex) {
         int result = 0;
         Pattern pattern = Pattern.compile(regex);

@@ -26,12 +26,12 @@ public class SortResultSteps {
     }
 
     @Step
-    public int extractAreaFromFirstFoundObject() {
+    public double extractAreaFromFirstFoundObject() {
         String titleText = sortResultPage.getFoundObjectsTitles().first().getText();
-        log.info("Title: "  + titleText);
-         int result = utils.extractIntFromText(titleText, "\\d+[ ]*м²");
-         log.info("Area: " + result);
-         return result;
+        log.info("Title: " + titleText);
+        double result = utils.extractDoubleFromText(titleText, "\\d+[,]?\\d[ ]*м²");
+        log.info("Area: " + result);
+        return result;
     }
 
     @Step
