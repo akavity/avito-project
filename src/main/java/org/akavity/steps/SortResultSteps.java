@@ -26,6 +26,15 @@ public class SortResultSteps {
     }
 
     @Step
+    public int extractAreaFromFirstFoundObject() {
+        String titleText = sortResultPage.getFoundObjectsTitles().first().getText();
+        log.info("Title: "  + titleText);
+         int result = utils.extractIntFromText(titleText, "\\d+[ ]*м²");
+         log.info("Area: " + result);
+         return result;
+    }
+
+    @Step
     public int getPriceFirstFoundObject() {
         String price = sortResultPage.getPricesOfFoundObjects().first().getText();
         log.info("Found price of first object: " + price);
