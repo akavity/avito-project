@@ -4,12 +4,38 @@
     "deskTopApartment": "Квартира",
     "dropDownRoom": "Комната",
     "checkboxRooms": "Комнат в квартире",
-    "numberOfRooms": "2 комнаты",
+    "numberOfRooms": "1 комната",
     "limitOfArea": "Площадь",
     "minArea": "20",
     "maxArea": "40",
     "limitOfPrice": "Цена",
-    "minPrice": "700000",
-    "maxPrice": "1200000"
+    "minPrice": "400000",
+    "maxPrice": "900000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownRoom": "Комната",
+    "checkboxRooms": "Комнат в квартире",
+    "numberOfRooms": "3 комнаты",
+    "limitOfArea": "Площадь",
+    "minArea": "30",
+    "maxArea": "75",
+    "limitOfPrice": "Цена",
+    "minPrice": "1700000",
+    "maxPrice": "2200000"
+  },
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownRoom": "Комната",
+    "checkboxRooms": "Комнат в квартире",
+    "numberOfRooms": "5 комнат",
+    "limitOfArea": "Площадь",
+    "minArea": "20",
+    "maxArea": "70",
+    "limitOfPrice": "Цена",
+    "minPrice": "500000",
+    "maxPrice": "1000000"
   }
 ]
