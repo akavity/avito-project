@@ -28,11 +28,13 @@ public class RealEstateTest extends BaseTest {
         realEstateSteps.selectValuesOfLimit(apartment.getLimitOfPrice(), apartment.getMinPrice(), apartment.getMaxPrice());
         realEstateSteps.clickShowResultButton();
 
-        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int actualPrice = sortResultSteps.getPriceFirstFoundObject();
         int minPrice = Integer.parseInt(apartment.getMinPrice());
         int maxPrice = Integer.parseInt(apartment.getMaxPrice());
+        Assert.assertTrue(actualPrice <= maxPrice && actualPrice >= minPrice);
 
-        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+        String actualTitle = sortResultSteps.getNameOfFirstFoundObject();
+        Assert.assertTrue(actualTitle.contains(apartment.getPartOftTitle()));
     }
 
     @TestData(jsonFile = "summerHouseData", model = "SummerHouseData", folder = "realEstateTest")
@@ -41,15 +43,20 @@ public class RealEstateTest extends BaseTest {
     public void selectSummerHouseUsingDesktop(SummerHouseData dacha) {
         rubricatorSteps.moveToSection(dacha.getSection());
         realEstateSteps.selectDropDownItem(dacha.getDeskTopApartment(), dacha.getDropDownDacha());
+        realEstateSteps.selectCheckboxListItem(dacha.getTypeTitle(), dacha.getType());
         realEstateSteps.selectValuesOfLimit(dacha.getLimitOfArea(), dacha.getMinArea(), dacha.getMaxArea());
         realEstateSteps.selectValuesOfLimit(dacha.getLimitOfPrice(), dacha.getMinPrice(), dacha.getMaxPrice());
         realEstateSteps.clickShowResultButton();
 
-        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int actualPrice = sortResultSteps.getPriceFirstFoundObject();
         int minPrice = Integer.parseInt(dacha.getMinPrice());
         int maxPrice = Integer.parseInt(dacha.getMaxPrice());
+        Assert.assertTrue(actualPrice <= maxPrice && actualPrice >= minPrice);
 
-        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+        int actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
+        int minArea = Integer.parseInt(dacha.getMinArea());
+        int maxArea = Integer.parseInt(dacha.getMaxArea());
+        Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
     }
 
     @TestData(jsonFile = "roomData", model = "RoomData", folder = "realEstateTest")
