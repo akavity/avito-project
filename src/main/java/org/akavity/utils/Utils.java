@@ -31,7 +31,9 @@ public class Utils {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
-            result = Integer.parseInt(matcher.group().replace(" ", ""));
+            result = Integer.parseInt(matcher.group()
+                    .replace(" ", "")
+                    .replace("м²", ""));
         }
         return result;
     }
