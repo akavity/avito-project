@@ -9,5 +9,38 @@
     "wheelFormula": "4×2",
     "fullEquipmentName": "DAF XF",
     "numberOfArrayElements": 5
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Тягачи",
+    "decision": "yes",
+    "truckBrand": "КрАЗ",
+    "truckModel": "6446",
+    "wheelFormula": "6×6",
+    "fullEquipmentName": "КрАЗ 6446",
+    "numberOfArrayElements": 5
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Тягачи",
+    "decision": "no",
+    "truckBrand": "FAW",
+    "truckModel": "JH6",
+    "wheelFormula": "4×2",
+    "fullEquipmentName": "FAW JH6",
+    "numberOfArrayElements": 5
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Тягачи",
+    "decision": "yes",
+    "truckBrand": "MAN",
+    "truckModel": "TGS",
+    "wheelFormula": "6×4",
+    "fullEquipmentName": "MAN TGS",
+    "numberOfArrayElements": 5
   }
 ]
