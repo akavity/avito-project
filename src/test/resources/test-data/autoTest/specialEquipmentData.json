@@ -5,10 +5,70 @@
     "thirdSection": "Сельхозтехника",
     "firstDecision": "no",
     "typeOfEquipment": "Копатель корнеплодов",
+    "secondDecision": "yes",
+    "equipmentBrand": "Кормилец",
+    "equipmentModel": "4-КТ",
+    "fullEquipmentName": "Кормилец 4-КТ",
+    "numberOfArrayElements": 3
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "no",
+    "typeOfEquipment": "Зерноочиститель",
     "secondDecision": "no",
-    "equipmentBrand": "УРАЛЕЦ",
-    "equipmentModel": "КК-540",
-    "fullEquipmentName": "УРАЛЕЦ КК-540",
+    "equipmentBrand": "Petkus",
+    "equipmentModel": "К527",
+    "fullEquipmentName": "Petkus К527",
+    "numberOfArrayElements": 5
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "yes",
+    "typeOfEquipment": "Протравливатель",
+    "secondDecision": "no",
+    "equipmentBrand": "Ремком",
+    "equipmentModel": "ПС-10",
+    "fullEquipmentName": "Ремком ПС-10",
+    "numberOfArrayElements": 5
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "no",
+    "typeOfEquipment": "Бункер",
+    "secondDecision": "no",
+    "equipmentBrand": "Bonum",
+    "equipmentModel": "БП-1000",
+    "fullEquipmentName": "Bonum БП-1000",
+    "numberOfArrayElements": 3
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "yes",
+    "typeOfEquipment": "Подборщик",
+    "secondDecision": "no",
+    "equipmentBrand": "Ростсельмаш",
+    "equipmentModel": "ПП",
+    "fullEquipmentName": "Ростсельмаш ПП",
+    "numberOfArrayElements": 3
+  },
+  {
+    "firstSection": "Авто",
+    "secondSection": "Грузовики",
+    "thirdSection": "Сельхозтехника",
+    "firstDecision": "no",
+    "typeOfEquipment": "Мини-трактор",
+    "secondDecision": "yes",
+    "equipmentBrand": "Agrostroj",
+    "equipmentModel": "TZ",
+    "fullEquipmentName": "Agrostroj TZ",
     "numberOfArrayElements": 5
   }
 ]
