@@ -1,12 +1,10 @@
 package org.akavity;
 
 import org.akavity.annotations.TestData;
-import org.akavity.models.realEstateTest.ApartmentData;
-import org.akavity.models.realEstateTest.LandData;
-import org.akavity.models.realEstateTest.RoomData;
-import org.akavity.models.realEstateTest.SummerHouseData;
+import org.akavity.models.realEstateTest.*;
 import org.akavity.steps.RealEstateSteps;
 import org.akavity.steps.RubricatorSteps;
+import org.akavity.steps.SearchFilterSteps;
 import org.akavity.steps.SortResultSteps;
 import org.akavity.utils.JsonReader;
 import org.testng.Assert;
@@ -14,6 +12,7 @@ import org.testng.annotations.Test;
 
 public class RealEstateTest extends BaseTest {
     RubricatorSteps rubricatorSteps = new RubricatorSteps();
+    SearchFilterSteps searchFilterSteps = new SearchFilterSteps();
     RealEstateSteps realEstateSteps = new RealEstateSteps();
     SortResultSteps sortResultSteps = new SortResultSteps();
 
@@ -97,5 +96,33 @@ public class RealEstateTest extends BaseTest {
         int maxPrice = Integer.parseInt(land.getMaxPrice());
 
         Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+    }
+
+    @TestData(jsonFile = "apartmentFilterData", model = "ApartmentFilterData", folder = "realEstateTest")
+    @Test(description = "Select apartment using filters: number of rooms, min and max price, min and max area, repair," +
+            " bathroom type, house type",
+            dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectApartmentUsingFilters(ApartmentFilterData apartment) {
+        rubricatorSteps.moveToSection(apartment.getSection());
+        realEstateSteps.clickShowResultButton();
+        searchFilterSteps.clickButtonOrCheckbox(apartment.getNumberOfRoomsTitle(), apartment.getNumberOfRooms());
+        searchFilterSteps.setValuesOfLimit(apartment.getLimitOfPrice(), apartment.getMinPrice(), apartment.getMaxPrice());
+        searchFilterSteps.setValuesOfLimit(apartment.getLimitOfArea(), apartment.getMinArea(), apartment.getMaxArea());
+        searchFilterSteps.clickButtonOrCheckbox(apartment.getRepairTitle(), apartment.getRepair());
+        searchFilterSteps.clickButtonOrCheckbox(apartment.getBathroomTypeTitle(), apartment.getBathroomType());
+        searchFilterSteps.clickButtonOrCheckbox(apartment.getHouseTypeTitle(), apartment.getHouseType());
+        searchFilterSteps.clickResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(apartment.getMinPrice());
+        int maxPrice = Integer.parseInt(apartment.getMaxPrice());
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+
+        double actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
+        double minArea = Double.parseDouble(apartment.getMinArea());
+        double maxArea = Double.parseDouble(apartment.getMaxArea());
+        Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
+
+        Assert.assertTrue(sortResultSteps.getNameOfFirstFoundObject().contains(apartment.getPartOfName()));
     }
 }
