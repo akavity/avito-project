@@ -48,6 +48,6 @@ public class SortResultSteps {
 
     @Step
     public boolean doDescriptionsContainText(List<String> parameters, int elements) {
-        return utils.doShortDescriptionsContainText(sortResultPage.getShortDescriptionField(), parameters, elements);
+        return utils.doShortDescriptionsContainParameters(sortResultPage.getShortDescriptionField(), parameters, elements);
     }
 }

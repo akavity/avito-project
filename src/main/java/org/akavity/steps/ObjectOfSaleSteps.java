@@ -14,5 +14,4 @@ public class ObjectOfSaleSteps {
         log.info("Object of sales price: " + result);
         return  result;
     }
-
 }

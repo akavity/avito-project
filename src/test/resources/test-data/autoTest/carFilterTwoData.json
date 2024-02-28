@@ -24,5 +24,84 @@
       "бензин"
     ],
     "numberOfArrayElements": 5
+  },
+  {
+    "sectionFirst": "Авто",
+    "sectionSecond": "Авто",
+    "priceTitle": "Цена",
+    "minPrice": "500000",
+    "maxPrice": "1500000",
+    "yearOfIssueTitle": "Год выпуска",
+    "minYearOfIssue": "2008",
+    "maxYearOfIssue": "2014",
+    "carMileageTitle": "Пробег",
+    "maxCarMileage": "170 000",
+    "driveUnitTitle": "Привод",
+    "driveUnit": "передний",
+    "engineTypeTitle": "Тип двигателя",
+    "engineType": "бензин",
+    "carConditionTitle": "Состояние",
+    "carCondition": "битых",
+    "bodyStyleTitle": "Тип кузова",
+    "bodyStyle": "универсал",
+    "parameters": [
+      "универсал",
+      "передний",
+      "бензин"
+    ],
+    "numberOfArrayElements": 5
+  },
+  {
+    "sectionFirst": "Авто",
+    "sectionSecond": "Авто",
+    "priceTitle": "Цена",
+    "minPrice": "500000",
+    "maxPrice": "1000000",
+    "yearOfIssueTitle": "Год выпуска",
+    "minYearOfIssue": "2000",
+    "maxYearOfIssue": "2010",
+    "carMileageTitle": "Пробег",
+    "maxCarMileage": "200 000",
+    "driveUnitTitle": "Привод",
+    "driveUnit": "полный",
+    "engineTypeTitle": "Тип двигателя",
+    "engineType": "бензин",
+    "carConditionTitle": "Состояние",
+    "carCondition": "битых",
+    "bodyStyleTitle": "Тип кузова",
+    "bodyStyle": "5-дверный",
+    "parameters": [
+      "внедорожник",
+      "полный",
+      "бензин"
+    ],
+    "numberOfArrayElements": 5
+  },
+  {
+    "sectionFirst": "Авто",
+    "sectionSecond": "Авто",
+    "priceTitle": "Цена",
+    "minPrice": "100000",
+    "maxPrice": "500000",
+    "yearOfIssueTitle": "Год выпуска",
+    "minYearOfIssue": "2000",
+    "maxYearOfIssue": "2015",
+    "carMileageTitle": "Пробег",
+    "maxCarMileage": "140 000",
+    "driveUnitTitle": "Привод",
+    "driveUnit": "полный",
+    "engineTypeTitle": "Тип двигателя",
+    "engineType": "бензин",
+    "carConditionTitle": "Состояние",
+    "carCondition": "Битые",
+    "bodyStyleTitle": "Тип кузова",
+    "bodyStyle": "седан",
+    "parameters": [
+      "седан",
+      "полный",
+      "бензин",
+      "битый"
+    ],
+    "numberOfArrayElements": 5
   }
 ]

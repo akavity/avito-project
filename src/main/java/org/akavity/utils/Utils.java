@@ -69,7 +69,7 @@ public class Utils {
         return result;
     }
 
-    public boolean doShortDescriptionsContainText(ElementsCollection collection, List<String> parameters, int elements) {
+    public boolean doShortDescriptionsContainParameters(ElementsCollection collection, List<String> parameters, int elements) {
         boolean result = true;
         if (collection.isEmpty()) {
             log.info("Collection is empty");
@@ -79,7 +79,7 @@ public class Utils {
             for (String description : descriptions) {
                 log.info("Array descriptions contains description: " + description);
                 for (String parameter : parameters) {
-                    if (!description.contains(parameter)) {
+                    if (!description.toLowerCase().contains(parameter)) {
                         log.info("/// Description dose not contain parameter: " + parameter);
                         result = false;
                         break;
