@@ -1,0 +1,20 @@
+[
+  {
+    "section": "Недвиж",
+    "numberOfRoomsTitle": "Количество комнат",
+    "numberOfRooms": "2",
+    "limitOfPrice": "Цена",
+    "minPrice": "2000000",
+    "maxPrice": "5000000",
+    "limitOfArea": "Общая площадь",
+    "minArea": "35",
+    "maxArea": "65",
+    "repairTitle": "Ремонт",
+    "repair": "С ремонтом",
+    "bathroomTypeTitle": "Санузел",
+    "bathroomType": "Раздельный",
+    "houseTypeTitle": "Тип дома",
+    "houseType": "Монолитный",
+    "partOfName": "2-к."
+  }
+]

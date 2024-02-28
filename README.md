@@ -8,9 +8,10 @@
 * Test 5. Select car using rubricator.
 * Test 6. Select special equipment using rubricator.
 * Test 7. Select truck using rubricator.
-* Test 8. Select car using filters: type car, in stock, car brand, car model,
+* Test 8. Select car using filters: type car, car brand, car model, 
           min and max price, min and max car mileage, drive unit.
-* Test 9. Select car using filters: price, year of issue, car mileage, drive unit, car condition, body style.
+* Test 9. Select car using filters: price, year of issue, car mileage,
+          drive unit, car condition, body style.
 
 ## Technologies:
 * Java 17
