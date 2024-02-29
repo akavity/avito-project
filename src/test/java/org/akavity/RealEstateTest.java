@@ -105,12 +105,12 @@ public class RealEstateTest extends BaseTest {
     public void selectApartmentUsingFilters(ApartmentFilterData apartment) {
         rubricatorSteps.moveToSection(apartment.getSection());
         realEstateSteps.clickShowResultButton();
-        searchFilterSteps.clickButtonOrCheckbox(apartment.getNumberOfRoomsTitle(), apartment.getNumberOfRooms());
+        searchFilterSteps.clickCheckbox(apartment.getNumberOfRoomsTitle(), apartment.getNumberOfRooms());
         searchFilterSteps.setValuesOfLimit(apartment.getLimitOfPrice(), apartment.getMinPrice(), apartment.getMaxPrice());
         searchFilterSteps.setValuesOfLimit(apartment.getLimitOfArea(), apartment.getMinArea(), apartment.getMaxArea());
-        searchFilterSteps.clickButtonOrCheckbox(apartment.getRepairTitle(), apartment.getRepair());
-        searchFilterSteps.clickButtonOrCheckbox(apartment.getBathroomTypeTitle(), apartment.getBathroomType());
-        searchFilterSteps.clickButtonOrCheckbox(apartment.getHouseTypeTitle(), apartment.getHouseType());
+        searchFilterSteps.clickButton(apartment.getRepairTitle(), apartment.getRepair());
+        searchFilterSteps.clickButton(apartment.getBathroomTypeTitle(), apartment.getBathroomType());
+        searchFilterSteps.clickCheckbox(apartment.getHouseTypeTitle(), apartment.getHouseType());
         searchFilterSteps.clickResultButton();
 
         int actual = sortResultSteps.getPriceFirstFoundObject();

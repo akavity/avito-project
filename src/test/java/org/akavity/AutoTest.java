@@ -73,12 +73,12 @@ public class AutoTest extends BaseTest {
     public void selectCarUsingFiltersTest1(CarFilterData car) {
         rubricatorSteps.moveToSection(car.getSectionFirst());
         rubricatorSteps.moveToSection(car.getSectionSecond());
-        searchFilterSteps.clickButtonOrCheckbox(car.getTypeCarTitle(), car.getTypeCar());
+        searchFilterSteps.clickButton(car.getTypeCarTitle(), car.getTypeCar());
         searchFilterSteps.clickDropdownCheckbox(car.getCarBrandTitle(), car.getCarBrand());
         searchFilterSteps.clickDropdownCheckbox(car.getCarModelTitle(), car.getCarModel());
         searchFilterSteps.setValuesOfLimit(car.getPriceTitle(), car.getMinPrice(), car.getMaxPrice());
         searchFilterSteps.setValuesOfDropDownLimit(car.getCarMileageTitle(), car.getMinCarMileage(), car.getMaxCarMileage());
-        searchFilterSteps.clickButtonOrCheckbox(car.getDriveUnitTitle(), car.getDriveUnit());
+        searchFilterSteps.clickCheckbox(car.getDriveUnitTitle(), car.getDriveUnit());
         searchFilterSteps.clickResultButton();
 
         int actual = sortResultSteps.getPriceFirstFoundObject();
@@ -98,10 +98,10 @@ public class AutoTest extends BaseTest {
         searchFilterSteps.setValuesOfLimit(car.getPriceTitle(), car.getMinPrice(), car.getMaxPrice());
         searchFilterSteps.setValuesOfLimit(car.getYearOfIssueTitle(), car.getMinYearOfIssue(), car.getMaxYearOfIssue());
         searchFilterSteps.setValuesOfDropDownLimit(car.getCarMileageTitle(), car.getMaxCarMileage());
-        searchFilterSteps.clickButtonOrCheckbox(car.getDriveUnitTitle(), car.getDriveUnit());
-        searchFilterSteps.clickButtonOrCheckbox(car.getEngineTypeTitle(), car.getEngineType());
-        searchFilterSteps.clickButtonOrCheckbox(car.getCarConditionTitle(), car.getCarCondition());
-        searchFilterSteps.clickButtonOrCheckbox(car.getBodyStyleTitle(), car.getBodyStyle());
+        searchFilterSteps.clickCheckbox(car.getDriveUnitTitle(), car.getDriveUnit());
+        searchFilterSteps.clickCheckbox(car.getEngineTypeTitle(), car.getEngineType());
+        searchFilterSteps.clickButton(car.getCarConditionTitle(), car.getCarCondition());
+        searchFilterSteps.clickButton(car.getBodyStyleTitle(), car.getBodyStyle());
         searchFilterSteps.clickResultButton();
 
         int actual = sortResultSteps.getPriceFirstFoundObject();

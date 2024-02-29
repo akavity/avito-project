@@ -5,6 +5,7 @@ import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.akavity.pages.SearchFilterPage;
 import org.akavity.utils.Utils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.actions;
@@ -21,6 +22,27 @@ public class SearchFilterSteps {
         buttonCheckbox.scrollIntoView(PARAMETER);
         log.info("Under the title: " + title + "\n click on the item contains text: " + text);
         buttonCheckbox.click();
+//        Dimension size = buttonCheckbox.getSize();
+//        actions().moveToElement(buttonCheckbox, -size.width/2 + 2, -size.height/2 + 2).click().perform();
+    }
+
+    @Step
+    public void clickCheckbox(String title, String text) {
+        SelenideElement checkbox = searchFilterPage.getCheckBox(title, text);
+        checkbox.scrollIntoView(PARAMETER);
+        log.info("Under the title: " + title + "\n click on the checkbox: " + text);
+        Dimension size = checkbox.getSize();
+        actions().moveToElement(checkbox, -size.width / 2 + 2, -size.height / 2 + 2).click().perform();
+    }
+
+    @Step
+    public void clickButton(String title, String text) {
+        SelenideElement button = searchFilterPage.getButton(title, text);
+        button.scrollIntoView(PARAMETER);
+        log.info("Under the title: " + title + "\n click on the button: " + text);
+        button.click();
+//        Dimension size = button.getSize();
+//        actions().moveToElement(button, -size.width/2 + 2, -size.height/2 + 2).click().perform();
     }
 
     @Step

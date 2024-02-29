@@ -12,6 +12,8 @@
           min and max price, min and max car mileage, drive unit.
 * Test 9. Select car using filters: price, year of issue, car mileage,
           drive unit, car condition, body style.
+* Test 10. Select apartment using filters: number of rooms, min and max price, 
+           min and max area, repair,bathroom type, house type
 
 ## Technologies:
 * Java 17
