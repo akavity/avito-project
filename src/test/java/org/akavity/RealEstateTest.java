@@ -100,8 +100,7 @@ public class RealEstateTest extends BaseTest {
 
     @TestData(jsonFile = "apartmentFilterData", model = "ApartmentFilterData", folder = "realEstateTest")
     @Test(description = "Select apartment using filters: number of rooms, min and max price, min and max area, repair," +
-            " bathroom type, house type",
-            dataProviderClass = JsonReader.class, dataProvider = "getData")
+            " bathroom type, house type", dataProviderClass = JsonReader.class, dataProvider = "getData")
     public void selectApartmentUsingFilters(ApartmentFilterData apartment) {
         rubricatorSteps.moveToSection(apartment.getSection());
         realEstateSteps.clickShowResultButton();
@@ -124,5 +123,33 @@ public class RealEstateTest extends BaseTest {
         Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
 
         Assert.assertTrue(sortResultSteps.getNameOfFirstFoundObject().contains(apartment.getPartOfName()));
+    }
+
+    @TestData(jsonFile = "summerHouseFilterData", model = "SummerHouseFilterData", folder = "realEstateTest")
+    @Test(description = "Select summer house using filters: min and max price, min and max house area, min and max land " +
+            "area, number of floors, number of rooms,", dataProviderClass = JsonReader.class, dataProvider = "getData")
+    public void selectSummerHouseUsingFilters(SummerHouseFilterData dacha) {
+        rubricatorSteps.moveToSection(dacha.getSection());
+        realEstateSteps.selectDropDownItem(dacha.getDeskTopApartment(), dacha.getDropDownDacha());
+        realEstateSteps.clickShowResultButton();
+        searchFilterSteps.clickCheckbox(dacha.getTypeTitle(), dacha.getType());
+        searchFilterSteps.setValuesOfLimit(dacha.getLimitOfPrice(), dacha.getMinPrice(), dacha.getMaxPrice());
+        searchFilterSteps.setValuesOfLimit(dacha.getLimitOfHouseArea(), dacha.getMinHouseArea(), dacha.getMaxHouseArea());
+        searchFilterSteps.setValuesOfLimit(dacha.getLimitOfLandArea(), dacha.getMinLandArea(), dacha.getMaxLandArea());
+        searchFilterSteps.clickCheckbox(dacha.getFloorsTitle(), dacha.getNumberOfFloors());
+        searchFilterSteps.clickCheckbox(dacha.getRoomsTitle(), dacha.getNumberOfRooms());
+        searchFilterSteps.clickResultButton();
+
+        int actual = sortResultSteps.getPriceFirstFoundObject();
+        int minPrice = Integer.parseInt(dacha.getMinPrice());
+        int maxPrice = Integer.parseInt(dacha.getMaxPrice());
+        Assert.assertTrue(actual <= maxPrice && actual >= minPrice);
+
+        double actualArea = sortResultSteps.extractAreaFromFirstFoundObject();
+        double minArea = Double.parseDouble(dacha.getMinHouseArea());
+        double maxArea = Double.parseDouble(dacha.getMaxHouseArea());
+        Assert.assertTrue(actualArea <= maxArea && actualArea >= minArea);
+
+        Assert.assertTrue(sortResultSteps.doTitlesContainSpecificName(dacha.getPartOfName(), 5));
     }
 }

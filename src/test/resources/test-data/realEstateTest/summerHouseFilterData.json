@@ -1,0 +1,23 @@
+[
+  {
+    "section": "Недвиж",
+    "deskTopApartment": "Квартира",
+    "dropDownDacha": "дача",
+    "typeTitle": "Вид объекта",
+    "type": "Дача",
+    "limitOfHouseArea": "Площадь дома",
+    "minHouseArea": "30",
+    "maxHouseArea": "60",
+    "limitOfLandArea": "Площадь участка",
+    "minLandArea": "4",
+    "maxLandArea": "8",
+    "limitOfPrice": "Цена",
+    "minPrice": "1500000",
+    "maxPrice": "2200000",
+    "floorsTitle": "Этажей в доме",
+    "numberOfFloors": "1",
+    "roomsTitle": "Количество комнат",
+    "numberOfRooms": "2",
+    "partOfName": "Дача"
+  }
+]
