@@ -17,16 +17,6 @@ public class SearchFilterSteps {
     Utils utils = new Utils();
 
     @Step
-    public void clickButtonOrCheckbox(String title, String text) {
-        SelenideElement buttonCheckbox = searchFilterPage.getButtonOrCheckout(title, text);
-        buttonCheckbox.scrollIntoView(PARAMETER);
-        log.info("Under the title: " + title + "\n click on the item contains text: " + text);
-        buttonCheckbox.click();
-//        Dimension size = buttonCheckbox.getSize();
-//        actions().moveToElement(buttonCheckbox, -size.width/2 + 2, -size.height/2 + 2).click().perform();
-    }
-
-    @Step
     public void clickCheckbox(String title, String text) {
         SelenideElement checkbox = searchFilterPage.getCheckBox(title, text);
         checkbox.scrollIntoView(PARAMETER);
@@ -41,8 +31,6 @@ public class SearchFilterSteps {
         button.scrollIntoView(PARAMETER);
         log.info("Under the title: " + title + "\n click on the button: " + text);
         button.click();
-//        Dimension size = button.getSize();
-//        actions().moveToElement(button, -size.width/2 + 2, -size.height/2 + 2).click().perform();
     }
 
     @Step

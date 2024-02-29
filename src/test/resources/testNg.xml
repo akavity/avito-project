@@ -30,6 +30,8 @@
                     <include name="selectSummerHouseUsingDesktop"/>
                     <include name="selectRoomUsingDesktop"/>
                     <include name="selectLandUsingDesktop"/>
+                    <include name="selectApartmentUsingFilters"/>
+                    <include name="selectSummerHouseUsingFilters"/>
                 </methods>
             </class>
         </classes>
